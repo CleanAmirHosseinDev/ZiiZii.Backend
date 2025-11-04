@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ZiiZiiKids.Backend.Models
+namespace ZiiZii.Backend.Core.Entities
 {
     public class Product
     {
@@ -55,6 +55,19 @@ namespace ZiiZiiKids.Backend.Models
         public Product Product { get; set; }
     }
 
+    public class Review
+    {
+        public int Id { get; set; }
+        public int ProductId { get; set; }
+        public string UserId { get; set; }
+        public string Title { get; set; }
+        public string Body { get; set; }
+        public int Rating { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public bool IsApproved { get; set; }
+        
+        public Product Product { get; set; }
+    }
     public class ProductVariant
     {
         public int Id { get; set; }

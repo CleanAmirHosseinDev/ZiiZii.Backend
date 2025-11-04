@@ -1,7 +1,10 @@
 // ZiiZii.Backend.API/Controllers/ProductsController.cs
 using Microsoft.AspNetCore.Mvc;
-using ZiiZiiKids.Core.Entities;
-using ZiiZiiKids.Core.Interfaces;
+using ZiiZii.Backend.Core.Entities;
+using ZiiZii.Backend.Core.Interfaces;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Threading.Tasks;
 
 namespace ZiiZiiKids.API.Controllers
 {

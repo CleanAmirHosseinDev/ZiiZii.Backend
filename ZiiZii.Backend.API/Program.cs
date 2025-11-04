@@ -1,8 +1,9 @@
 // ZiiZii.Backend.API/Program.cs
 using Microsoft.EntityFrameworkCore;
-using ZiiZiiKids.Core.Interfaces;
-using ZiiZiiKids.Infrastructure.Data;
-using ZiiZiiKids.Infrastructure.Services;
+using ZiiZii.Backend.Infrastructure;
+using ZiiZii.Backend.Infrastructure.Data;
+using ZiiZii.Backend.Infrastructure.Services;
+using ZiiZii.Backend.Core.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Services
+// Services (DI)
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IInventoryService, InventoryService>();
 
