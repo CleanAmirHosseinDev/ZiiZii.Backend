@@ -30,7 +30,7 @@ namespace ZiiZii.Backend.API.Controllers
                 var order = new Order
                 {
                     UserId = request.UserId.ToString(),
-                    ShippingAddress = request.ShippingAddress,
+                    //ShippingAddress = request.ShippingAddress,
                     Status = "pending",
                     OrderDate = DateTime.UtcNow,
                     OrderItems = new List<OrderItem>()
